@@ -1,0 +1,65 @@
+* {
+    font-family: Arial, 'Times New Roman', 'Microsoft YaHei', SimHei;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+#main-msg {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    width: 400px;
+    margin-left: -200px;
+    z-index: 99999;
+}
+
+#main-msg .box {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    background: #F6F6F6;
+    border: 2px solid #ccc;
+    margin-top: 2px;
+    padding: 10px 15px;
+    color: #555;
+}
+
+#main-msg .box h3 {
+    margin: 0 0 8px;
+    font-weight: bold;
+    font-size: 15px;
+    color: red;
+}
+
+#main-msg .box p {
+    margin: 0;
+}
+
+#main-north-title {
+    position: absolute;
+    left: 10px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#main-north-title a {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#main-north-link {
+    position: absolute;
+    right: 10px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#main-north-link a {
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+}
