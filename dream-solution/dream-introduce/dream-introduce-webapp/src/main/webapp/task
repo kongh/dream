@@ -1,0 +1,3 @@
+1.完成app.js模块化
+2.考虑异步加载html后，bootstrap data-api事件是否有效，应该是无效，需重新注册绑定
+3.seajs封装table操作，treetable操作，以及页面其他模块化
