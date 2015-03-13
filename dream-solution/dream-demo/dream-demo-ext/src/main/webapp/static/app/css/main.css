@@ -1,0 +1,90 @@
+* {
+    font-family: Arial, 'Times New Roman', 'Microsoft YaHei', SimHei;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+#main-msg {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    width: 400px;
+    margin-left: -200px;
+    z-index: 99999;
+}
+
+#main-msg .box {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    background: #F6F6F6;
+    border: 2px solid #ccc;
+    margin-top: 2px;
+    padding: 10px 15px;
+    color: #555;
+}
+
+#main-msg .box h3 {
+    margin: 0 0 8px;
+    font-weight: bold;
+    font-size: 15px;
+    color: red;
+}
+
+#main-msg .box p {
+    margin: 0;
+}
+
+#main-north-title {
+    position: absolute;
+    left: 10px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#main-north-title a {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#main-north-link {
+    position: absolute;
+    right: 10px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#main-north-link a {
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+select,textarea, input[type="text"], input[type="password"], input[type="datetime"],
+	input[type="datetime-local"], input[type="date"], input[type="month"],
+	input[type="time"], input[type="week"], input[type="number"], input[type="email"],
+	input[type="url"], input[type="search"], input[type="tel"], input[type="color"],
+	.uneditable-input {
+	border:0 none;
+	padding:0;
+	margin:0;
+}
+
+ select:focus,  textarea:focus,  input[type="text"]:focus,  input[type="password"]:focus,
+	 input[type="datetime"]:focus,  input[type="datetime-local"]:focus,  input[type="date"]:focus,
+	 input[type="month"]:focus,  input[type="time"]:focus,  input[type="week"]:focus,
+	 input[type="number"]:focus,  input[type="email"]:focus,  input[type="url"]:focus,
+	 input[type="search"]:focus,  input[type="tel"]:focus,  input[type="color"]:focus,
+	.uneditable-input:focus {
+	border:0 none;
+	padding:0;
+	margin:0;
+}
+
+input[type="button"].x-tree-checkbox{
+	width:15px;
+}
