@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.coder.dream.base.utils.NullUtil;
 import com.coder.dream.base.web.controller.BaseDirectTreeController;
 import com.coder.dream.base.web.vo.FilterMap;
+import com.coder.dream.base.web.vo.ResultMap;
 import com.coder.dream.introduce.entity.sm.DictionaryItem;
 import com.coder.dream.introduce.repository.sm.DictionaryItemDao;
 import com.coder.dream.introduce.service.sm.DictionaryItemService;
@@ -43,4 +44,11 @@ public class DictionaryItemController extends BaseDirectTreeController<Dictionar
 		return new ModelAndView();
 	}
 	
+	@Override
+	public ResultMap create(DictionaryItem entity) {
+		DictionaryItem dictionaryItem = service.get(entity.getParentId());
+		String code = dictionaryItem.getDictionaryCode();
+		entity.setDictionaryCode(code);
+		return super.create(entity);
+	}
 }
