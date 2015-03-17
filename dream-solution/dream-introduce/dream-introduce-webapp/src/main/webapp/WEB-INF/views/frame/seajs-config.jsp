@@ -31,6 +31,7 @@
 			//app
 			"app-base" : "coder/app/1.0.0/base.js",
 			"app-util" : "coder/app/1.0.0/util.js",
+			"app-login":"coder/app/1.0.0/modules/login/login.js",
 			"app-dictionary":"coder/app/1.0.0/modules/dictionary/dictionary.js",
 			"app-dictionary-item":"coder/app/1.0.0/modules/dictionary/item.js",
 			"app-param":"coder/app/1.0.0/modules/param/param.js",

@@ -8,6 +8,9 @@
     	<%@ include file="/WEB-INF/views/frame/meta.jsp" %>
         <%@ include file="/WEB-INF/views/frame/ie-html5-support.jsp" %>
         <%@ include file="/WEB-INF/views/frame/seajs-config.jsp" %>
+        <script type="text/javascript">
+	    	seajs.use("app-login");
+        </script>
     </head>
     <body class="skin-blue">
 		<!-- header logo: style can be found in header.less -->
@@ -45,11 +48,11 @@
                                     <h3 class="box-title">登录梦想基础平台</h3>
                                 </div><!-- /.box-header -->
                                 <!-- form start -->
-                                <form role="form" action="${ctx}/login/auth" method="post">
+                                <form id="login-form" role="form" action="${ctx}/login/auth" method="post">
                                     <div class="box-body">
                                         <div class="input-group">
                                         <span class="input-group-addon">@</span>
-                                        <input type="text" name="account" class="form-control" placeholder="用户名">
+                                        <input type="text" name="account" class="form-control"  value="${account}" placeholder="用户名">
                                     </div>
                                     <br/>
                                     <div class="input-group">
@@ -59,7 +62,10 @@
                                     </div><!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary">登录</button>
+                                    	<div class="alert alert-danger  coder-margin-left <c:if test="${empty errorMsg}">hidden</c:if>" role="alert" >
+                                    	${errorMsg}
+                                    	</div>
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
                                     </div>
                                 </form>
                             </div><!-- /.box -->
