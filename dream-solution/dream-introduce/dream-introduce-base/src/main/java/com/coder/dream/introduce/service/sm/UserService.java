@@ -1,6 +1,7 @@
 package com.coder.dream.introduce.service.sm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import com.coder.dream.base.utils.NullUtil;
 import com.coder.dream.base.web.session.SessionManager;
 import com.coder.dream.base.web.vo.FilterMap;
 import com.coder.dream.introduce.entity.sm.User;
+import com.coder.dream.introduce.entity.sm.UserRole;
 import com.coder.dream.introduce.repository.sm.ResourceDao;
 import com.coder.dream.introduce.repository.sm.RoleResourceDao;
 import com.coder.dream.introduce.repository.sm.UserDao;
@@ -91,5 +93,26 @@ public class UserService extends BaseService<User, UserDao>{
 		}
 		List<String> urls = resourceDao.findResourceUrlsByResourceIds(resourceIds);
 		return urls;
+	}
+	
+	@Override
+	public void delete(String id) {
+		super.delete(id);
+		FilterMap filterMap = new FilterMap();
+		filterMap.eq("userId", id);
+		Specification<UserRole> specification = SpecificationBuildUtil.buildSpecification(filterMap);
+		List<UserRole> userRoles = userRoleDao.findAll(specification);
+		userRoleDao.deleteInBatch(userRoles);
+	}
+	
+	@Override
+	public void delete(String[] ids) {
+		if(ids == null || ids.length == 0){
+			return ;
+		}
+		List<User> deleting = dao.findAll(Arrays.asList(ids));
+		for (User user : deleting) {
+			delete(user.getId());
+		}
 	}
 }
