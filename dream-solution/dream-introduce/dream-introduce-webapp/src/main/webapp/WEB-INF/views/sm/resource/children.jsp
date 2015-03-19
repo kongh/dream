@@ -16,7 +16,7 @@
 		</span>
 	</td>
 	<td>${node.code}</td>
-	<td>${node.type}</td>
+	<td>${node.typeAlias}</td>
 	<td>${node.url}</td>
 	<td>${node.iconCls}</td>
 	<td>${node.comments}</td>

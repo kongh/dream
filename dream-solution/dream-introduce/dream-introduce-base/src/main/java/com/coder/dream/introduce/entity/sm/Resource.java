@@ -2,6 +2,7 @@ package com.coder.dream.introduce.entity.sm;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 import com.coder.dream.base.entity.BaseTree;
@@ -27,6 +28,9 @@ public class Resource extends BaseTree implements MenuResource{
 	
 	private String comments;
 
+	@Transient
+	private String typeAlias;
+	
 	public String getName() {
 		return name;
 	}
@@ -73,5 +77,13 @@ public class Resource extends BaseTree implements MenuResource{
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getTypeAlias() {
+		return typeAlias;
+	}
+
+	public void setTypeAlias(String typeAlias) {
+		this.typeAlias = typeAlias;
 	}
 }

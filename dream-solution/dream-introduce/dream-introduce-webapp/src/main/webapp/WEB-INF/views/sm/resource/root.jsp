@@ -4,7 +4,7 @@
 <dm:auth resource="/sm/resource/root">
 <tr 
 	data-tt-id='${root.id}'
-	data-tt-parent-id='${node.parentId}'
+	data-tt-parent-id='${root.parentId}'
 	data-tt-branch="${!root.leaf}"
 	data-path="${ctx}/sm/resource/children?id=${root.id}"
 >
@@ -14,7 +14,7 @@
 		</span>
 	</td>
 	<td>${root.code}</td>
-	<td>${root.type}</td>
+	<td>${root.typeAlias}</td>
 	<td>${root.url}</td>
 	<td>${root.iconCls}</td>
 	<td>${root.comments}</td>

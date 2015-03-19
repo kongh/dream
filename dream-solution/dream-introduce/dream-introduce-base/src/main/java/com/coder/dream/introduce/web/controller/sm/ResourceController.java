@@ -1,5 +1,6 @@
 package com.coder.dream.introduce.web.controller.sm;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coder.dream.base.web.controller.BaseDirectTreeController;
+import com.coder.dream.base.web.vo.FilterMap;
+import com.coder.dream.introduce.entity.sm.DictionaryItem;
 import com.coder.dream.introduce.entity.sm.Resource;
 import com.coder.dream.introduce.repository.sm.ResourceDao;
+import com.coder.dream.introduce.service.sm.DictionaryItemService;
 import com.coder.dream.introduce.service.sm.ResourceService;
 import com.coder.dream.introduce.service.sm.RoleResourceService;
 
@@ -22,6 +26,9 @@ public class ResourceController extends BaseDirectTreeController<Resource, Resou
 
 	@Autowired
 	private RoleResourceService roleResourceService;
+	
+	@Autowired
+	private DictionaryItemService dictionaryItemService;
 	
 	@Override
 	protected void doAfterSelect(Map<String, String> params,Model model,List<Resource> resources) {
@@ -36,5 +43,30 @@ public class ResourceController extends BaseDirectTreeController<Resource, Resou
 				resource.setChecked(resourceIds.contains(resource.getId()));
 			}
 		}
+	}
+
+	@Override
+	protected List<Resource> doChildren(Map<String, String> params, String id) {
+		List<Resource> resources = super.doChildren(params, id);
+		if(CollectionUtils.isNotEmpty(resources)){
+			Map<String,String> map = new HashMap<String,String>();
+			FilterMap filterMap = new FilterMap();
+			for (Resource resource : resources) {
+				String type = resource.getType();
+				String typeAlias = map.get(type);
+				if(StringUtils.isBlank(typeAlias)){
+					filterMap.eq("value", type);
+					DictionaryItem item = dictionaryItemService.findOne(filterMap);
+					if(item == null){
+						typeAlias = type;
+					}else{
+						typeAlias = item.getName();
+					}
+					map.put(type, typeAlias);
+				}
+				resource.setTypeAlias(typeAlias);
+			}
+		}
+		return resources;
 	}
 }
