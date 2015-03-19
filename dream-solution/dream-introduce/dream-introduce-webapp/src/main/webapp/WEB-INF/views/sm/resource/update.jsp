@@ -46,8 +46,10 @@
 						<label for="sm-resource-update-type"
 							class="col-sm-2 control-label">资源类型</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control"
-								id="sm-resource-update-type" name="type" placeholder="资源类型">
+							<!-- <input type="text" class="form-control"
+								id="sm-resource-update-type" name="type" placeholder="资源类型"> -->
+								<select id="sm-resource-update-type"  name="type" style="width:100%;">
+								</select>
 						</div>
 					</div>
 					<div class="form-group">

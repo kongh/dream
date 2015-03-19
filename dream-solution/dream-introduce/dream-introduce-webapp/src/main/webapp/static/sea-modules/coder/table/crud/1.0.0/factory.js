@@ -53,7 +53,11 @@ define(function(require, exports, module) {
 						 fillValue = renderer(fillValue);
 					 }
 				 }
-				 $filed.val(fillValue);
+				 if(typeof $filed.select2 === 'function' ){
+					 $filed.val(fillValue).trigger("change");
+				 }else{
+					 $filed.val(fillValue);
+				 }
 			 }      
 		 }
 		 
