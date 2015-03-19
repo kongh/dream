@@ -15,16 +15,15 @@
 				<form id="sm-dictionary-item-update-form" class="form-horizontal"
 					role="form">
 					<%--隐藏字段开始 --%>
-					<input type="hidden" name="id" value="${id}"> <input
-						type="hidden" name="createUserId" value="${createUserId}">
-					<input type="hidden" name="createDate"
-						value="<fmt:formatDate value="${createDate}" pattern="yyyy-MM-dd HH:mm:ss"/>">
+					<input type="hidden" name="id" value="${id}">
+					 <input type="hidden" name="createUserId" value="${createUserId}">
+					<input type="hidden" name="createDate" value="<fmt:formatDate value="${createDate}" pattern="yyyy-MM-dd HH:mm:ss"/>">
 					<input type="hidden" name="updateUserId" value="${updateUserId}">
-					<input type="hidden" name="updateDate"
-						value="<fmt:formatDate value="${updateDate}" pattern="yyyy-MM-dd HH:mm:ss"/>">
-					<input type="hidden" name="sort" value="${sort}"> <input
-						type="hidden" name="status" value="${status}"> <input
-						type="hidden" name="parentId" value="${parentId}">
+					<input type="hidden" name="updateDate" value="<fmt:formatDate value="${updateDate}" pattern="yyyy-MM-dd HH:mm:ss"/>">
+					<input type="hidden" name="sort" value="${sort}">
+					 <input type="hidden" name="status" value="${status}">
+					  <input type="hidden" name="parentId" value="${parentId}">
+					   <input type="hidden" name="dictionaryCode" value="${dictionaryCode}">
 					<%--隐藏结束开始 --%>
 					<div class="form-group">
 						<label for="sm-dictionary-item-update-name"

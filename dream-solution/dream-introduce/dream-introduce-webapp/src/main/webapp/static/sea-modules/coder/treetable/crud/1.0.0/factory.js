@@ -4,11 +4,13 @@ define(function(require, exports, module) {
 	require('treetable')($);
 	require('treetable-ajax-persist')($);
 	require('jquery-form')($);
+	require("jquery-select2")($);
 	var util = require('app-util');
 	
 	//css
 	seajs.use("jquery/treetable/3.2.0/css/jquery.treetable.css");
 	seajs.use("jquery/treetable/3.2.0/css/jquery.treetable.theme.dream.css");
+	seajs.use('jquery-select2-css');
 	//factoryBean
 	return (function(){
 		var factory=new Object(); 
@@ -56,6 +58,8 @@ define(function(require, exports, module) {
 				 $filed.val(fillValue);
 			 }      
 		 }
+		
+		factory.doAjax = doAjax;
 		//end
 		
 		//私有方法

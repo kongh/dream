@@ -16,5 +16,22 @@ define(function(require, exports, module) {
 			treeTableConfig:treeTableConfig
 		});
 		
+		var context = {
+				url: ctx + '/sm/dictionary/item/combo',
+				data:{
+					dictionaryCode:'sm_resource_type'
+				},
+				successCallback:onGetResourceTypeSuccess
+		};
+		
+		factory.doAjax(context);
     });
+	
+	function onGetResourceTypeSuccess(context){
+		var result = context.result;
+		$('select').select2({
+			data:result.data
+		});
+	}
+	
 });

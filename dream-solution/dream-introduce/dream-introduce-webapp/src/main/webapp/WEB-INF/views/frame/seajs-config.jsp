@@ -19,8 +19,11 @@
 			"treetable" : "jquery/treetable/3.2.0/jquery.treetable.js",
 			"jquery-form" : "jquery/form/3.51.0/jquery.form.js",
 			"treetable-ajax-persist" : "jquery/treetable/3.2.0/jquery.treetable-ajax-persist.js",
+			"jquery-select2":"jquery/select2/4.0.0/js/select2.js",
+			"jquery.mousewheel":"jquery/mousewheel/3.1.12/jquery.mousewheel.js",
 			//jquery and jquery plugin css
 			"bootstrap-css":"jquery/bootstrap/3.3.0/css/bootstrap.min.css",
+			"jquery-select2-css":"jquery/select2/4.0.0/css/select2.min.css",
 			/********************************************************/
 			//coder base
 			"sidebar" : "coder/sidebar/menu/1.0.0/dream.sidebar.menu.js",

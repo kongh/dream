@@ -71,5 +71,9 @@
 				</property>
 			</bean>
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.coder.dream.base.web.interceptor.TitleInterceptor"></bean>
+		</mvc:interceptor>
 	</mvc:interceptors>
 </beans>
